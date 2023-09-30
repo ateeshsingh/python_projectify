@@ -4,7 +4,6 @@ transformers
 datasets
 tensorflow
 nltk
-sklearn~=0.0.post9
 fastapi~=0.103.1
 uvicorn~=0.23.2
 flatten_json
