@@ -1,6 +1,6 @@
 
 class BaseConfig(object):
-    DATABASE_HOST = "mongodb+srv://ateesh:atch20615008@mflix.34yoj.mongodb.net/?retryWrites=true&w=majority"
+    DATABASE_HOST = "mongodb+srv://dev:atch20615008@mflix.34yoj.mongodb.net/?retryWrites=true&w=majority"
     DATABASE = "projectify_database"
 
 

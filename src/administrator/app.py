@@ -17,11 +17,10 @@ class AppMongo(metaclass=Singleton):
 
     def __init__(self):
         env_detail = config_env.get(os.getenv('FN_ENV', 'default').lower())
-        host = getattr(env_detail, "DATABASE_HOST")
-        # port = getattr(env_detail, "DATABASE_PORT")
+        uri = getattr(env_detail, "DATABASE_HOST")
         self.db_name = getattr(env_detail, "DATABASE")
         from pymongo import MongoClient
-        self.cx = MongoClient(host=host)
+        self.cx = MongoClient(uri)
         self.db = self.cx[self.db_name]
         logging.info("Database connection completed!")
 
@@ -33,7 +32,7 @@ class AppMongo(metaclass=Singleton):
 class App(metaclass=Singleton):
 
     def __init__(self):
-        env_detail = config_env.get(os.getenv('Footnote', 'default').lower())
+        env_detail = config_env.get(os.getenv('PROJECT_GALLERY', 'default').lower())
         print(env_detail)
         for key in dir(env_detail):
             if key.isupper():
